@@ -1,25 +1,40 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect } from "react";
+import { BrowserRouter as Router } from "react-router-dom";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import PropTypes from "prop-types";
+import { connect } from "react-redux";
+
+import Alerts from "./components/app/Alerts";
+
+import AppRoutes from "./AppRoutes";
+
+function App(props) {
+	// const { authenticated, user } = props
+
+	return (
+		<Router>
+			<div className="app">
+				<div className="app-header">
+					<Alerts />
+				</div>
+
+				<div className="app-content">
+					<AppRoutes />
+				</div>
+
+			</div>
+		</Router>
+	)
 }
 
-export default App;
+App.propTypes = {
+	authenticated: PropTypes.bool,
+	user: PropTypes.object,
+}
+
+const mapStateToProps = state => ({
+	authenticated: state.account.authenticated,
+	user: state.account.user,
+})
+
+export default connect(mapStateToProps,{})(App);
