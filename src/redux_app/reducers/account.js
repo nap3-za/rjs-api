@@ -13,7 +13,7 @@ const token = localStorage.getItem("restapitoken")
 const initialState = {
 	token,
 	user: null,
-	authenticated: true,
+	authenticated: false,
 }
 
 

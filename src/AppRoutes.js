@@ -15,10 +15,9 @@ import {
 } from "./AppUrls";
 
 
-
 function AppRoutes(props) {
 	const { authenticated } = props;
-	
+
 	if (authenticated) {
 		return <Routes>
 			<Route exact path="/" element={<Index />} />

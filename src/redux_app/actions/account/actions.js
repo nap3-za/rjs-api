@@ -1,6 +1,4 @@
-
-// import axios from "axios";
-
+import { axios } from "axios";
 
 import { tokenConfigurator } from "../../../Utilities";
 import { returnErrors } from "../error/actions";
@@ -20,12 +18,6 @@ import {
 	LOAD_USER,
 } from "./types";
 
-import {
-	LOADING_OFF,
-} from "../app/types";
-
-
-let axios = "";
 
 export const loadUser = () => (dispatch, getState) => {
 	axios.get(EP_LOAD_USER, tokenConfigurator(getState))
@@ -40,13 +32,14 @@ export const loadUser = () => (dispatch, getState) => {
 		})
 }
 
-export const signIn = (phone_number, password) => dispatch => {
+export const signIn = (formData) => dispatch => {
 	const config = {
 		headers: {
 			"Content-Type": "application/json",
 		}
 	}
-	const body = JSON.stringify({phone_number, password});
+	const body = JSON.stringify(formData);
+
 	axios.post(EP_SIGN_IN, body, config)
 		.then(response => {
 			dispatch({
@@ -60,7 +53,7 @@ export const signIn = (phone_number, password) => dispatch => {
 		})
 }
 
-export const signUp = (formData, signUpToken) => dispatch => {
+export const signUp = (formData) => dispatch => {
 	const config = {
 		headers: {
 			"Content-Type": "application/json",
@@ -68,6 +61,7 @@ export const signUp = (formData, signUpToken) => dispatch => {
 		}
 	}
 	const body = JSON.stringify(formData);
+
 	axios.post(EP_SIGN_UP, body, config)
 		.then(response => {
 			dispatch({
@@ -81,15 +75,11 @@ export const signUp = (formData, signUpToken) => dispatch => {
 		})
 }
 
-export const forgotPassword = (email) => dispatch => {
-	// Do the things
-}
-
 export const signOut = () => (dispatch, getState) => {
 	const token =  getState().authentication.token;
+
 	axios.post(EP_SIGN_OUT, null, tokenConfigurator(getState))
 		.then(response => {
-			// Remove authentication details
 			dispatch({
 				type: SIGN_OUT,
 				payload: response.data
@@ -102,3 +92,6 @@ export const signOut = () => (dispatch, getState) => {
 		})
 }
 
+export const forgotPassword = (formData) => dispatch => {
+	// Do the things
+}
