@@ -2,13 +2,13 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 
 import { Provider } from "react-redux";
-import store from "./reduxApp/store";
+import store from "./redux_app/store";
 
 import  { Provider as AlertProvider } from "react-alert";
 import AlertTemplate from "react-alert-template-basic";
 import App from './App';
 
-import { loadUser } from "./reduxApp/actions/account/actions";
+import { loadUser } from "./redux_app/actions/account/actions";
 
 // Alert config
 const alertConfig = {

@@ -18,8 +18,10 @@ import {
 
 function AppRoutes(props) {
 	const { authenticated } = props;
+	
 	if (authenticated) {
 		return <Routes>
+			<Route exact path="/" element={<Index />} />
 	 		<Route exact path={URL_SIGN_OUT} element={<SignOut />} />	
 		</Routes>
 	} else {

@@ -1,5 +1,6 @@
 
-import axios from "axios";
+// import axios from "axios";
+
 
 import { tokenConfigurator } from "../../../Utilities";
 import { returnErrors } from "../error/actions";
@@ -23,6 +24,8 @@ import {
 	LOADING_OFF,
 } from "../app/types";
 
+
+let axios = "";
 
 export const loadUser = () => (dispatch, getState) => {
 	axios.get(EP_LOAD_USER, tokenConfigurator(getState))
@@ -99,22 +102,3 @@ export const signOut = () => (dispatch, getState) => {
 		})
 }
 
-export const submitSignUpToken = (formData) => dispatch => {
-	const config = {
-		headers: {
-			"Content-Type": "application/json",
-		}
-	}
-	const body = JSON.stringify(formData);
-	axios.post(EP_SIGN_UP, body, config)
-		.then(response => {
-			dispatch({
-				type: SUBMIT_SIGN_UP_TOKEN,
-				payload: response.data,
-			});
-		}).catch(error => {
-			if (error.response) {
-				dispatch(returnErrors(error.response.data, error.response.status))
-			}
-		})
-}
