@@ -1,5 +1,4 @@
 import React, { useState, Fragment, useRef } from 'react';
-import { cookie } from "react-cookie";
 import { Link, Navigate } from "react-router-dom";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
@@ -39,6 +38,10 @@ function SignInForm(props) {
 
 	function clearForm() {
 		form.current && form.current.reset();
+	}
+
+	if (props.authenticated) {
+		return <Navigate to="/" />
 	}
 
 	return (
