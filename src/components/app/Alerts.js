@@ -6,9 +6,9 @@ import { usePrevious } from "../../Utilities";
 
 function Alerts(props) {
 
-	const { error, alert, message } = props
+	const { error, alert } = props
 	const prevError = usePrevious(error)
-	const prevMessage = usePrevious(message)
+	// const prevMessage = usePrevious(message)
 
 	useEffect(
 		() => {
@@ -18,9 +18,9 @@ function Alerts(props) {
 				}
 			}
 
-			if (message !== prevMessage) {
-				if (message.message) alert.info(message.message)
-			}
+			// if (message !== prevMessage) {
+			// 	if (message.message) alert.info(message.message)
+			// }
 		}
 	)
 	return <Fragment />
@@ -28,12 +28,10 @@ function Alerts(props) {
 
 Alerts.propTypes = {
 	error: PropTypes.object.isRequired,
-	message: PropTypes.object.isRequired,
 }
 
 const mapStateToProps = state => ({
-	error: state.errors,
-	message: state.messages,
+	error: state.error,
 });
 
 export default connect(mapStateToProps)(withAlert()(Alerts));

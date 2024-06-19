@@ -8,6 +8,7 @@
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
+    "axios": "^1.7.2",
     "react": "^18.3.1",
     "react-alert": "^7.0.3",
     "react-alert-template-basic": "^1.0.2",
@@ -28,7 +29,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "build-tailwind": "./tailwindcss -i src/index.css -o public/index.css",
-    "build-tailwind-watch": "./tailwindcss -i src/index.css -o public/index.css --watch"    
+    "build-tailwind-watch": "./tailwindcss -i src/index.css -o public/index.css --watch"
   },
   "eslintConfig": {
     "extends": [

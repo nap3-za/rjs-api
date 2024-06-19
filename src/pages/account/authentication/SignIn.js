@@ -10,7 +10,7 @@ function SignIn(props) {
 	return (
         <Fragment>
             <section className="flex flex-col justify-center items-center bg-light py-12 md:py-0">
-                <div className="w-[90%] sm:w-[80%] md:w-[75%] lg:w-[50%]">
+                <div className="w-[90%] sm:w-[80%] md:w-[50%] lg:w-[40%]">
                     <SignInForm />
                 </div>
             </section>

@@ -1,4 +1,4 @@
-import { axios } from "axios";
+import axios from "axios";
 
 import { tokenConfigurator } from "../../../Utilities";
 import { returnErrors } from "../error/actions";

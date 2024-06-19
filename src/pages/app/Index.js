@@ -1,14 +1,11 @@
 import React, { Fragment } from "react";
-
+import { Link } from "react-router-dom";
 
 function Index() {
 	return (
 		<Fragment>
-            <section className="flex flex-col justify-center items-center bg-light">
-            	<div className="w-[90%] sm:w-[60%] md:w-[50%] lg:w-[35%]">
-            		This Is The Index Page
-            	</div>               
-            </section>
+			This IS The Home Page
+			<Link to="/sign-in/">Sign In</Link>
 		</Fragment>
 	);
 }
