@@ -6,6 +6,7 @@ function Index() {
 		<Fragment>
 			This IS The Home Page
 			<Link to="/sign-in/">Sign In</Link>
+			<Link to="/sign-up/">Sign Up</Link>
 		</Fragment>
 	);
 }

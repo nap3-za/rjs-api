@@ -54,33 +54,31 @@ function SignInForm(props) {
 			         <h1 className="text-3xl font-bold text-[#4B5563] text-[#4B5563] my-auto">Your Company</h1>
 
 			    </div>
-			    <div className="text-sm font-light text-[#6B7280] pb-8 ">Login to your account on Your Company.</div>
+			    <div className="text-sm font-light text-[#6B7280] pb-8 ">Sign-in to your account on Your Company.</div>
 			    <form className="flex flex-col" onSubmit={handleFormSubmit} ref={form}>
-			        <div className="pb-2">
-			            <label for="username" className="block mb-2 text-sm font-medium text-[#111827]">Email</label>
+			        <div>
+			            <label for="username" className="text-input-label">Email</label>
 			            <div className="relative text-gray-400">
-			            	<span className="absolute inset-y-0 left-0 flex items-center p-1 pl-3">
-			            		IC
-			            	</span>
-			                <input type="username" name="username" id="username" className="pl-12 mb-2 bg-gray-50 text-gray-600 border focus:border-transparent border-gray-300 sm:text-sm rounded-lg ring ring-transparent focus:ring-1 focus:outline-none focus:ring-gray-400 block w-full p-2.5 rounded-l-lg py-3 px-4" placeholder="name@company.com" autocomplete="off" onChange={handleFormChange} required={true}/>
+			                <input type="username" name="username" id="username" className="text-input" placeholder="name@company.com" autocomplete="off" onChange={handleFormChange} required={true}/>
 			            </div>
 			        </div>
+
 			        <div className="pb-6">
-			            <label for="password" className="block mb-2 text-sm font-medium text-[#111827]">Password</label>
-			            <div className="relative text-gray-400">            	
-			            	<span className="absolute inset-y-0 left-0 flex items-center p-1 pl-3">
-			            		IC
-			            	</span>
-			            	<input type="password" name="password" id="password" placeholder="••••••••••" className="pl-12 mb-2 bg-gray-50 text-gray-600 border focus:border-transparent border-gray-300 sm:text-sm rounded-lg ring ring-transparent focus:ring-1 focus:outline-none focus:ring-gray-400 block w-full p-2.5 rounded-l-lg py-3 px-4" autocomplete="new-password" onChange={handleFormChange} required={true}/>
+			            <label for="password" className="text-input-label">Password</label>
+			            <div className="text-gray-400">
+			            	<input type="password" name="password" id="password" placeholder="••••••••••" className="text-input" autocomplete="new-password" onChange={handleFormChange} required={true}/>
 			            </div>
 			        </div>
-			        <button type="submit" className="w-full text-[#FFFFFF] bg-[#030712] focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mb-6" onChange={handleFormSubmit}>Login</button>
+
+			        <button type="submit" className="btn-submit" onChange={handleFormSubmit}>
+			        	Sign In
+			        </button>
 			        <div className="text-sm font-light text-[#6B7280] ">
 			        	Don't have an accout yet? <Link to="#" className="font-medium text-[#030712] hover:underline">Sign Up</Link>
 			        </div>
 			    </form>
 
-			    <div className="relative flex py-8 items-center">
+			    <div className="relative flex py-6 items-center">
 			        <div className="flex-grow border-t border-[1px] border-gray-200"></div> <span className="flex-shrink mx-4 font-medium text-gray-500">OR</span> 
 			        <div className="flex-grow border-t border-[1px] border-gray-200"></div>
 			    </div>

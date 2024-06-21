@@ -33,14 +33,16 @@
 	@apply space-y-4 md:space-y-6;
 }
 .form-input-container {
-	@apply flex flex-col space-y-3 w-full;
+	@apply flex flex-col space-y-4 w-full;
 }
 
 .text-input {
-	@apply bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg  block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500;
+	/*@apply bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg  block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500;*/
+	@apply pl-6 mb-2 bg-gray-50 text-gray-600 border focus:border-transparent border-gray-300 sm:text-sm rounded-lg ring ring-transparent focus:ring-1 focus:outline-none focus:ring-gray-400 block w-full p-2.5 rounded-l-lg py-3 px-4;
 }
 .text-input-label {
-	@apply block mb-2 text-sm font-medium text-gray-900 dark:text-white;
+	/*@apply block mb-2 text-sm font-medium text-gray-900 dark:text-white;*/
+	@apply block mb-2 text-sm font-medium text-[#111827];
 }
 
 .select-input {
@@ -64,5 +66,13 @@
 /*=== Text styling */
 
 .text-link {
-	@apply font-medium text-dark underline dark:text-dark;
+	/*@apply font-medium text-dark underline dark:text-dark;*/
+	@apply font-medium text-[#030712] hover:underline;
+}
+
+
+/*=== Buttons */
+
+.btn-submit {
+	@apply w-full text-[#FFFFFF] bg-[#030712] focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mb-4;
 }
