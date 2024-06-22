@@ -11,6 +11,7 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import Offcanvas from 'react-bootstrap/Offcanvas';
+import InputGroup from 'react-bootstrap/InputGroup';
 
 
 function Header(props) {
@@ -18,7 +19,7 @@ function Header(props) {
 	const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
 	return (
-		<Navbar expand="lg" className="bg-body-tertiary mb-3" sticky="top">
+		<Navbar expand="lg" className="bg-body-tertiary mb-3 py-3" sticky="top">
 			<Container fluid>
 				<Navbar.Brand href="#">Navbar Offcanvas</Navbar.Brand>
 				<Navbar.Toggle aria-controls={`offcanvasNavbar-expand-lg`} />
@@ -51,13 +52,13 @@ function Header(props) {
 							</NavDropdown>
 						</Nav>
 						<Form className="d-flex">
-							<Form.Control
-								type="search"
-								placeholder="Search"
-								className="me-2"
-								aria-label="Search"
-							/>
-							<Button variant="outline-primary">Search</Button>
+							<InputGroup className="">
+								<Form.Control placeholder="Search..." aria-label="Search..." aria-describedby="basic-addon2"
+								/>
+								<Button variant="outline-primary" id="button-addon2">
+									Search
+								</Button>
+							</InputGroup>
 						</Form>
 					</Offcanvas.Body>
 				</Navbar.Offcanvas>

@@ -4,6 +4,12 @@ import { Link, Navigate } from "react-router-dom";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 
+import Button from 'react-bootstrap/Button';
+import Col from 'react-bootstrap/Col';
+import Form from 'react-bootstrap/Form';
+import Row from 'react-bootstrap/Row';
+import Card from 'react-bootstrap/Card';
+
 import { signUp } from "../../../redux_app/actions/account/actions";
 
 
@@ -49,100 +55,77 @@ function SignUpForm(props) {
 	}
 
 	return (
-        <Fragment>
-			<div className="flex flex-col w-full p-8 md:p-10 2xl:p-12 3xl:p-14 bg-[#ffffff] rounded-2xl shadow-xl">
-			    <div className="flex flex-row gap-3 pb-4">
-			        <div>
-			            <img src="/favicon.svg" width="50" alt="Logo"></img>
-			        </div>
-			         <h1 className="text-3xl font-bold text-[#4B5563] text-[#4B5563] my-auto">Your Company</h1>
 
-			    </div>
-			    <div className="text-sm font-light text-[#6B7280] pb-8 ">Sign Up to your account on Your Company.</div>
-			    
-			    <form className="flex flex-col" onSubmit={handleFormSubmit} ref={form}>
-			        <div className="col-md-row pb-6 md:space-x-3">
-						<div className="form-input-container">
-					        <div>
-					            <label for="name" className="text-input-label">Name</label>
-					            <div className="relative text-gray-400">
-					                <input type="name" name="name" id="name" className="text-input" placeholder="John" autocomplete="off" onChange={handleFormChange} required={true}/>
-					            </div>
-					        </div>	
+		<Card>
+			<Card.Header as="h4" className="d-flex justify-content-center py-3 fw-bold">
+				Sign Up
+			</Card.Header>
+			<Card.Body>
+				<Form onSubmit={handleFormSubmit} ref={form}>
+					<Row className="mb-3">
+						<Form.Group as={Col} controlId="formGridName">
+							<Form.Label>Name</Form.Label>
+							<Form.Control type="text" placeholder="John" name="name" onChange={handleFormChange} required={true}/>
+						</Form.Group>
 
-					        <div>
-					            <label for="surname" className="text-input-label">Surname</label>
-					            <div className="relative text-gray-400">
-					                <input type="surname" name="name" id="surname" className="text-input" placeholder="Doe" autocomplete="off" onChange={handleFormChange} required={true}/>
-					            </div>
-					        </div>	
+						<Form.Group as={Col} controlId="formGridSurname">
+							<Form.Label>Surname</Form.Label>
+							<Form.Control type="text" placeholder="Doe" name="surname" onChange={handleFormChange} required={true} />
+						</Form.Group>
+					</Row>
 
-	                        <div>
-	                        	<select name="gender" className="select-input">
-	                        		<option value="">Gender</option>
-	                        		<option value="MLE">Male</option>
-	                        		<option value="FML">Female</option>
-	                        		<option value="NBN">Non-binary</option>
-	                    		</select>
-	                        </div>
-						</div>
+					<Row className="mb-3">
+						<Form.Group as={Col} controlId="formGridEmail">
+							<Form.Label>Email</Form.Label>
+							<Form.Control type="email" placeholder="johndoe@email.com" name="email" onChange={handleFormChange} required={true}/>
+						</Form.Group>
 
-	            		<div className="form-input-container">
-					        <div>
-					            <label for="email" className="text-input-label">Email</label>
-					            <div className="relative text-gray-400">
-					                <input type="email" name="email" id="email" className="text-input" placeholder="johndoe@email.com" autocomplete="off" onChange={handleFormChange} required={true}/>
-					            </div>
-					        </div>	
-	            			<div>
-	                            <label htmlFor="password" className="text-input-label">Password</label>
-	                            <div className="relative text-gray-400">
-	                            	<input type="password" name="password" id="password" className="text-input" placeholder="••••••••" autocomplete="off" onChange={handleFormChange} required={true} />
-	                        	</div>
-	                        </div>
+						<Form.Group as={Col} controlId="formGridGender">
+							<Form.Label>Gender</Form.Label>
+						    <Form.Select aria-label="Default select example" name="gender" onChange={handleFormChange} required={true} >								<option value="MLE">Male</option>
+								<option value="FML">Female</option>
+								<option value="NBN">Non-binary</option>
+						    </Form.Select>
+						</Form.Group>
+					</Row>
 
-	                        <div>
-	                            <label htmlFor="confirm-password" className="text-input-label">Confirm password</label>
-	                            <div className="relative text-gray-400">
-	                            	<input type="password" name="password2" id="confirm-password" className="text-input" placeholder="••••••••" autocomplete="off" onChange={handleFormChange} required={true} />
-	                        	</div>
-	                        </div>	
-	            		</div>
-					</div>						
+					<Form.Group  controlId="formGridUsername" className="mb-3">
+						<Form.Label>Username</Form.Label>
+						<Form.Control type="text" placeholder="JohnDoe001" name="username" onChange={handleFormChange} required={true} />
+					</Form.Group>
 
-			        <button type="submit" className="btn-submit" onChange={handleFormSubmit}>
-			        	Sign Up
-			        </button>
 
-			        <div className="text-sm font-light text-[#6B7280] ">
-			        	Don't have an accout yet? <Link to="/sign-in/" className="text-link">Sign In</Link>
-			        </div>
-			    </form>
+					<Row className="mb-3">
+						<Form.Group as={Col} controlId="formGridPassword">
+							<Form.Label>Password</Form.Label>
+							<Form.Control type="password" placeholder="••••••••••" name="password" onChange={handleFormChange} required={true} />
+						</Form.Group>
 
-			    <div className="relative flex py-6 items-center">
-			        <div className="flex-grow border-t border-[1px] border-gray-200"></div> <span className="flex-shrink mx-4 font-medium text-gray-500">OR</span> 
-			        <div className="flex-grow border-t border-[1px] border-gray-200"></div>
-			    </div>
+						<Form.Group as={Col} controlId="formGridPassword2">
+							<Form.Label>Cofnirm password</Form.Label>
+							<Form.Control type="password" placeholder="••••••••••" name="password2" onChange={handleFormChange} required={true} />
+						</Form.Group>
+					</Row>
 
-			    <form>
-			        <div className="flex flex-row gap-2 justify-center">
-			            <button className="flex flex-row w-32 gap-2 bg-gray-600 p-2 rounded-md text-gray-200">
-			                <span className="absolute inset-y-0 left-0 flex items-center p-1 pl-3">
-			            		IC
-			            	</span>
-			            	<span className="font-medium mx-auto">Github</span>
 
-			            </button>
-			            <button className="flex flex-row w-32 gap-2 bg-gray-600 p-2 rounded-md text-gray-200">
-			                <span className="absolute inset-y-0 left-0 flex items-center p-1 pl-3">
-			            		IC
-			            	</span>
-			            	<span className="font-medium mx-auto">Github</span>
-			            </button>
-			        </div>
-			    </form>
-			</div>
-        </Fragment>
+					<Form.Group className="mb-3" id="formGridCheckbox">
+						<Form.Check type="checkbox" label="I accept T's&C's" />
+					</Form.Group>
+
+					<div className="d-flex justify-content-center">
+						<Button variant="primary" type="submit" onChange={handleFormSubmit}>
+							Submit
+						</Button>
+					</div>
+				</Form>					
+			</Card.Body>
+
+			<Card.Footer>
+				<Link to="/sign-in/" className="px-1">Sign In</Link>
+				<Link to="/sign-up/" className="px-1">Forgot Password</Link>
+			</Card.Footer>
+		</Card>
+
 	)
 }
 

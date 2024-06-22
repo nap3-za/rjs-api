@@ -2,19 +2,20 @@ import React, { Fragment } from 'react';
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+
 import SignInForm from "../../../components/account/authentication/SignInForm";
 
 
 function SignIn(props) {
     
 	return (
-        <Fragment>
-            <section className="flex flex-col justify-center items-center bg-light py-12 md:py-0">
-                <div className="w-[90%] sm:w-[80%] md:w-[50%] lg:w-[40%]">
-                    <SignInForm />
-                </div>
-            </section>
-        </Fragment>
+        <Row className="justify-content-center pt-5">
+            <Col xs sm="10" md="6" lg="4">
+                <SignInForm />
+            </Col>
+        </Row>
 	)
 }
 

@@ -1,18 +1,19 @@
 import React, { Fragment } from 'react';
 
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+
 import SignUpForm from "../../../components/account/authentication/SignUpForm";
 
 
 function SignUp(props) {
     
 	return (
-        <Fragment>
-            <section className="flex flex-col justify-center items-center bg-light py-12 md:py-0">
-                <div className="w-[90%] sm:w-[80%] md:w-[75%] lg:w-[50%]">
-                    <SignUpForm />
-                </div>
-            </section>
-        </Fragment>
+        <Row className="justify-content-center pt-5">
+            <Col xs sm="10" md="6" lg="6">
+                <SignUpForm />
+            </Col>
+        </Row>
 	)
 }
 
