@@ -3,11 +3,11 @@ import { Link } from "react-router-dom";
 
 function Index() {
 	return (
-		<Fragment>
+		<section className="h-screen">
 			This IS The Home Page
 			<Link to="/sign-in/">Sign In</Link>
 			<Link to="/sign-up/">Sign Up</Link>
-		</Fragment>
+		</section>
 	);
 }
 

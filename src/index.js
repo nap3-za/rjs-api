@@ -10,6 +10,7 @@ import App from './App';
 
 import { loadUser } from "./redux_app/actions/account/actions";
 
+
 // Alert config
 const alertConfig = {
 	timeout: 3000,

@@ -4,6 +4,9 @@ import { BrowserRouter as Router } from "react-router-dom";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 
+import "bootstrap/dist/css/bootstrap.min.css";
+import "./App.css";
+
 import Alerts from "./components/app/Alerts";
 import Header from "./components/app/Header";
 import Footer from "./components/app/Footer";
@@ -17,19 +20,12 @@ function App(props) {
 	return (
 		<Router>
 			<div className="app">
-				<div className="app-header">
-					<Header />
-					<Alerts />
-				</div>
+				<Header />
+				<Alerts />
 
-				<div className="app-content">
-					<AppRoutes />
-				</div>
+				<AppRoutes />
 
-				<div className="app-footer">
-					<Footer />
-				</div>
-
+				<Footer />
 			</div>
 		</Router>
 	)
