@@ -14,7 +14,7 @@ import { loadUser } from "./redux_app/actions/account/actions";
 // Alert config
 const alertConfig = {
 	timeout: 3000,
-	position: "top center"
+	position: "bottom center"
 }
 
 const root = ReactDOM.createRoot(document.getElementById('root'));

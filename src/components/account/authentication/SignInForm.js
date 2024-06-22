@@ -55,9 +55,9 @@ function SignInForm(props) {
 			</Card.Header>
 			<Card.Body>
 				<Form onSubmit={handleFormSubmit} ref={form}>
-					<Form.Group className="mb-3" controlId="formBasicEmail">
-						<Form.Label>Email address</Form.Label>
-						<Form.Control type="email" placeholder="johndoe@email.com" onChange={handleFormChange} required={true}/>
+					<Form.Group className="mb-3" controlId="formBasicUsername">
+						<Form.Label>Username</Form.Label>
+						<Form.Control type="text" placeholder="johndoe001" name="username" onChange={handleFormChange} required={true}/>
 						<Form.Text className="text-muted">
 							We'll never share your email with anyone else.
 						</Form.Text>
@@ -65,7 +65,7 @@ function SignInForm(props) {
 
 					<Form.Group className="mb-3" controlId="formBasicPassword">
 						<Form.Label>Password</Form.Label>
-						<Form.Control type="password" placeholder="••••••••••" onChange={handleFormChange} required={true}/>
+						<Form.Control type="password" placeholder="••••••••••" name="password" onChange={handleFormChange} required={true}/>
 					</Form.Group>
 					<Form.Group className="mb-3" controlId="formBasicCheckbox">
 						<Form.Check type="checkbox" label="I accept T's&C's" />
@@ -79,7 +79,7 @@ function SignInForm(props) {
 			</Card.Body>
 
 			<Card.Footer>
-				<Link to={URL_SIGN_UP} className="px-1">Sign In</Link>
+				<Link to={URL_SIGN_UP} className="px-1">Sign Up</Link>
 				<Link to={URL_PASSWORD_RESET} className="px-1">Forgot Password</Link>
 			</Card.Footer>
 		</Card>

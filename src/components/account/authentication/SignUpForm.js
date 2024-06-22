@@ -27,18 +27,28 @@ function SignUpForm(props) {
 
 		password: null,
 		password2: null,
+// 		name: "Nape",
+// 		surname: "Ntsoane",
+// 		gender: "MLE",
+// 
+// 		username: "NapeNtsoane",
+// 		email: "nape@email.com",
+// 
+// 		password: "nape.1352",
+// 		password2: "nape.1352",
+
 	});
 	const form = useRef(null);
 
 	function handleFormSubmit(event) {
 		event.preventDefault()
-		props.loadingOn()
 		props.signUp(formData)
 		
 		clearForm();
 	}
 
 	function handleFormChange(event) {
+		console.log(event.target)
 		const { name, value } = event.target
 		event.preventDefault();
 		setFormData((prevState) => {
@@ -47,6 +57,7 @@ function SignUpForm(props) {
 				[name]: value,
 			};
 		});
+		console.log(formData)
 	};
 
 	function clearForm() {
@@ -86,6 +97,7 @@ function SignUpForm(props) {
 						<Form.Group as={Col} controlId="formGridGender">
 							<Form.Label>Gender</Form.Label>
 						    <Form.Select aria-label="Default select example" name="gender" onChange={handleFormChange} required={true} >								<option value="MLE">Male</option>
+								<option  value="MLE">Male</option>
 								<option value="FML">Female</option>
 								<option value="NBN">Non-binary</option>
 						    </Form.Select>
