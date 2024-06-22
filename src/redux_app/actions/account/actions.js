@@ -8,12 +8,14 @@ import {
 	EP_SIGN_IN,
 	EP_SIGN_OUT,
 	EP_SIGN_UP,
+	EP_PASSWORD_RESET,
 } from "../../../AppEndpoints";
 
 import {
 	SIGN_UP,
 	SIGN_IN,
 	SIGN_OUT,
+	PASSWORD_RESET,
 
 	LOAD_USER,
 } from "./types";
@@ -92,6 +94,23 @@ export const signOut = () => (dispatch, getState) => {
 		})
 }
 
-export const forgotPassword = (formData) => dispatch => {
-	// Do the things
+export const passwordReset = (formData) => dispatch => {
+	const config = {
+		headers: {
+			"Content-Type": "application/json",
+		}
+	}
+	const body = JSON.stringify(formData);
+
+	axios.post(EP_PASSWORD_RESET, body, config)
+		.then(response => {
+			dispatch({
+				type: PASSWORD_RESET,
+				payload: response.data,
+			});
+		}).catch(error => {
+			if (error.response) {
+				dispatch(returnErrors(error.response.data, error.response.status))
+			}
+		})
 }

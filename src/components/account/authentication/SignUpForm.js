@@ -11,7 +11,10 @@ import Row from 'react-bootstrap/Row';
 import Card from 'react-bootstrap/Card';
 
 import { signUp } from "../../../redux_app/actions/account/actions";
-
+import {
+	URL_SIGN_IN,
+	URL_PASSWORD_RESET,
+} from "../../../AppUrls";
 
 function SignUpForm(props) {
 	const [formData, setFormData] = useState({
@@ -121,8 +124,8 @@ function SignUpForm(props) {
 			</Card.Body>
 
 			<Card.Footer>
-				<Link to="/sign-in/" className="px-1">Sign In</Link>
-				<Link to="/sign-up/" className="px-1">Forgot Password</Link>
+				<Link to={URL_SIGN_IN} className="px-1">Sign In</Link>
+				<Link to={URL_PASSWORD_RESET} className="px-1">Forgot Password</Link>
 			</Card.Footer>
 		</Card>
 

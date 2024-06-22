@@ -7,17 +7,16 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import Card from 'react-bootstrap/Card';
 
-import { signIn } from "../../../redux_app/actions/account/actions";
+import { passwordReset } from "../../../redux_app/actions/account/actions";
 import {
-	URL_SIGN_UP,
-	URL_PASSWORD_RESET,
+	URL_SIGN_UP, 
+	URL_PASSWORD_RESET
 } from "../../../AppUrls";
 
 
-function SignInForm(props) {
+function PasswordResetForm(props) {
 	const [formData, setFormData] = useState({
-		username: null,
-		password: null
+		email: null,
 	});
 
 	const form = useRef(null)
@@ -25,7 +24,7 @@ function SignInForm(props) {
 
 	function handleFormSubmit(event) {
 		event.preventDefault()
-		props.signIn(formData);
+		props.passwordReset(formData);
 		clearForm();
 	}
 
@@ -51,7 +50,7 @@ function SignInForm(props) {
 	return (
 		<Card>
 			<Card.Header as="h4" className="d-flex justify-content-center py-3 fw-bold">
-				Sign In
+				Password Reset
 			</Card.Header>
 			<Card.Body>
 				<Form onSubmit={handleFormSubmit} ref={form}>
@@ -63,10 +62,6 @@ function SignInForm(props) {
 						</Form.Text>
 					</Form.Group>
 
-					<Form.Group className="mb-3" controlId="formBasicPassword">
-						<Form.Label>Password</Form.Label>
-						<Form.Control type="password" placeholder="••••••••••" onChange={handleFormChange} required={true}/>
-					</Form.Group>
 					<Form.Group className="mb-3" controlId="formBasicCheckbox">
 						<Form.Check type="checkbox" label="I accept T's&C's" />
 					</Form.Group>
@@ -79,21 +74,21 @@ function SignInForm(props) {
 			</Card.Body>
 
 			<Card.Footer>
-				<Link to={URL_SIGN_UP} className="px-1">Sign In</Link>
-				<Link to={URL_PASSWORD_RESET} className="px-1">Forgot Password</Link>
+				<Link to="/sign-in/" className="px-1">Sign In</Link>
+				<Link to="/sign-up/" className="px-1">Sign Up</Link>
 			</Card.Footer>
 		</Card>
 	)
 }
 
-SignInForm.propTypes = {
+PasswordResetForm.propTypes = {
 	authenticated: PropTypes.bool,
-	signIn: PropTypes.func.isRequired,
+	passwordReset: PropTypes.func.isRequired,
 }
 
 const mapStateToProps = state => ({
 	authenticated: state.account.authenticated,
 })
 
-export default connect(mapStateToProps, { signIn })(SignInForm);
+export default connect(mapStateToProps, { passwordReset })(PasswordResetForm);
 

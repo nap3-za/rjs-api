@@ -9,10 +9,14 @@ import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import Offcanvas from 'react-bootstrap/Offcanvas';
 
+import InstagramIcon from "@material-ui/icons/Instagram";
+import TwitterIcon from "@material-ui/icons/Twitter";
+import GitHubIcon from "@material-ui/icons/GitHub";
+
 import {
 	URL_SIGN_OUT,
 } from "../../AppUrls";
-
+import { BRAND_NAME_LONG } from "../../Constants";
 
 function Footer(props) {
 
@@ -66,21 +70,21 @@ function Footer(props) {
 			</div>
 
 			<div className="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top">
-				<p>© 2024 Company, Inc. All rights reserved.</p>
+				<p>© 2024 {BRAND_NAME_LONG}, Inc. All rights reserved.</p>
 				<ul className="list-unstyled d-flex">
 					<li className="ms-3">
 						<a className="link-body-emphasis" href="#">
-						I
+							<GitHubIcon />
 						</a>
 					</li>
 					<li className="ms-3">
 						<a className="link-body-emphasis" href="#">
-						I
+							<TwitterIcon />
 						</a>
 					</li>
 					<li className="ms-3">
 						<a className="link-body-emphasis" href="#">
-						I
+							<InstagramIcon />
 						</a>
 					</li>
 				</ul>

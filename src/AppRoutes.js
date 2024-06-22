@@ -7,11 +7,13 @@ import Index from "./pages/app/Index";
 import SignIn from "./pages/account/authentication/SignIn";
 import SignUp from "./pages/account/authentication/SignUp";
 import SignOut from "./pages/account/authentication/SignOut";
+import PasswordReset from "./pages/account/authentication/PasswordReset";
 
 import {
 	URL_SIGN_IN,
 	URL_SIGN_UP,
-	URL_SIGN_OUT
+	URL_SIGN_OUT,
+	URL_PASSWORD_RESET,
 } from "./AppUrls";
 
 
@@ -28,6 +30,7 @@ function AppRoutes(props) {
 	 		<Route exact path="/" element={<Index />} />
 	 		<Route exact path={URL_SIGN_IN} element={<SignIn />} />
 	 		<Route exact path={URL_SIGN_UP} element={<SignUp />} />
+	 		<Route exact path={URL_PASSWORD_RESET} element={<PasswordReset />} />
 		</Routes>
 	}
 }

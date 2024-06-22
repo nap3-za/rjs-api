@@ -5,3 +5,4 @@ export const EP_LOAD_USER = EP_HOST + "authentication/account/";
 export const EP_SIGN_IN = EP_HOST + "authentication/sign-in/";
 export const EP_SIGN_UP = EP_HOST + "authentication/sign-up/";
 export const EP_SIGN_OUT = EP_HOST + "authentication/sign-out/";
+export const EP_PASSWORD_RESET = EP_HOST + "authentication/reset-password/";

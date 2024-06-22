@@ -5,6 +5,7 @@ import {
 	SIGN_IN,
 	SIGN_UP,
 	SIGN_OUT,
+	PASSWORD_RESET,
 
 } from "../actions/account/types";
 
@@ -35,6 +36,7 @@ export default function(state = initialState, action) {
 			};
 
 		case SIGN_IN:
+		case PASSWORD_RESET:
 		case SIGN_UP:
 			localStorage.setItem("restapitoken", action.payload.token);
 			return {
