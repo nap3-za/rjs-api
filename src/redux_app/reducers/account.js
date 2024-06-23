@@ -20,12 +20,6 @@ const initialState = {
 
 export default function(state = initialState, action) {
 	switch(action.type) {
-		case LOAD_USER:
-			return {
-				...state,
-				user: action.payload,
-			};
-
 		case SIGN_OUT:
 			localStorage.removeItem("restapitoken");
 			return {
@@ -33,6 +27,13 @@ export default function(state = initialState, action) {
 				
 				user: null,
 				authenticated: false,
+			};
+
+		case LOAD_USER:
+			localStorage.setItem("restapitoken", action.payload.token);
+			return {				
+				...action.payload,
+				authenticated: true,
 			};
 
 		case SIGN_IN:
