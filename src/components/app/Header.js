@@ -10,9 +10,10 @@ import NavDropdown from 'react-bootstrap/NavDropdown';
 import Offcanvas from 'react-bootstrap/Offcanvas';
 import InputGroup from 'react-bootstrap/InputGroup';
 
-import DashboardRoundedIcon from "@material-ui/icons/DashboardRounded";
+// import LogoutIcon from "@material-ui/icons/Logout";
 
 import {
+	URL_SIGN_IN,
 	URL_SIGN_OUT,
 } from "../../AppUrls";
 import { BRAND_NAME_SHORT } from "../../Constants";
@@ -44,7 +45,20 @@ function Header(props) {
 						</Offcanvas.Title>
 					</Offcanvas.Header>
 					<Offcanvas.Body>
-						<Nav className="justify-content-end flex-grow-1 pe-3">
+
+						<div className="d-flex flex-grow-1 justify-content-center" >
+							<Form className="d-flex">
+								<InputGroup className="">
+									<Form.Control placeholder="Search..." aria-label="Search..." aria-describedby="basic-addon2"
+									/>
+									<Button variant="outline-secondary" id="button-addon2">
+										Search
+									</Button>
+								</InputGroup>
+							</Form>
+						</div>
+
+						<Nav className="pe-3">
 							<Nav.Link href="#action1">Home</Nav.Link>
 							<Nav.Link href="#action2">Link</Nav.Link>
 							<NavDropdown
@@ -52,8 +66,10 @@ function Header(props) {
 								id={`offcanvasNavbarDropdown-expand-lg`}
 							>
 								<NavDropdown.Item href="#action3">Action</NavDropdown.Item>
-								<NavDropdown.Item href="#action4">
-									Another action
+								<NavDropdown.Item>
+									<Link to={URL_SIGN_OUT}>
+										Logout
+									</Link>
 								</NavDropdown.Item>
 								<NavDropdown.Divider />
 								<NavDropdown.Item href="#action5">
@@ -61,15 +77,7 @@ function Header(props) {
 								</NavDropdown.Item>
 							</NavDropdown>
 						</Nav>
-						<Form className="d-flex">
-							<InputGroup className="">
-								<Form.Control placeholder="Search..." aria-label="Search..." aria-describedby="basic-addon2"
-								/>
-								<Button variant="outline-secondary" id="button-addon2">
-									Search
-								</Button>
-							</InputGroup>
-						</Form>
+
 					</Offcanvas.Body>
 				</Navbar.Offcanvas>
 			</Container>

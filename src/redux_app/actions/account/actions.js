@@ -78,8 +78,6 @@ export const signUp = (formData) => dispatch => {
 }
 
 export const signOut = () => (dispatch, getState) => {
-	const token =  getState().authentication.token;
-
 	axios.post(EP_SIGN_OUT, null, tokenConfigurator(getState))
 		.then(response => {
 			dispatch({
