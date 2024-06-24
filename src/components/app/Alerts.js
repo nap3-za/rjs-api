@@ -14,7 +14,7 @@ function Alerts(props) {
 		() => {
 			if (error.message && error !== prevError) {
 				for (const [key, value] of Object.entries(error.message)) {
-					alert.error(`${key}: ${value}`)
+					alert.error(`${value}`)
 				}
 			}
 
