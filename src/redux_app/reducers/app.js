@@ -13,14 +13,13 @@ const initialState = {
 export default function(state = initialState, action) {
 	switch(action.type) {
 		case LOADING_ON:
+			console.log("Loading On");
 			return {
-				...state,
 				loading: true,
 			};
 			
 		case LOADING_OFF:
 			return {
-				...state,
 				loading: false,
 			};
 

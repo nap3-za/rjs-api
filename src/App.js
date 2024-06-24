@@ -10,12 +10,14 @@ import "./App.css";
 import Alerts from "./components/app/Alerts";
 import Header from "./components/app/Header";
 import Footer from "./components/app/Footer";
+import Loading from "./components/app/Loading";
 
 import AppRoutes from "./AppRoutes";
 
 
 function App(props) {
 	// const { authenticated, user } = props
+	const { loading } = props
 
 	return (
 		<Router>
@@ -23,8 +25,8 @@ function App(props) {
 				<Header />
 				<Alerts />
 
-				<AppRoutes />
-
+				{loading ? <Loading /> : <AppRoutes /> }
+				
 				<Footer />
 			</div>
 		</Router>
@@ -34,11 +36,13 @@ function App(props) {
 App.propTypes = {
 	authenticated: PropTypes.bool,
 	user: PropTypes.object,
+	loading: PropTypes.bool,
 }
 
 const mapStateToProps = state => ({
 	authenticated: state.account.authenticated,
 	user: state.account.user,
+	loading: state.app.loading
 })
 
 export default connect(mapStateToProps,{})(App);
