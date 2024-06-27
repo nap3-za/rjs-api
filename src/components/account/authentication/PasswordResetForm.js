@@ -8,9 +8,10 @@ import Form from 'react-bootstrap/Form';
 import Card from 'react-bootstrap/Card';
 
 import { passwordReset } from "../../../redux_app/actions/account/actions";
+
 import {
-	URL_SIGN_UP, 
-	URL_PASSWORD_RESET
+	URL_SIGN_IN,
+	URL_SIGN_UP,
 } from "../../../AppUrls";
 
 
@@ -74,8 +75,8 @@ function PasswordResetForm(props) {
 			</Card.Body>
 
 			<Card.Footer>
-				<Link to="/sign-in/" className="px-1">Sign In</Link>
-				<Link to="/sign-up/" className="px-1">Sign Up</Link>
+				<Link to={URL_SIGN_IN} className="px-1">Sign In</Link>
+				<Link to={URL_SIGN_UP}  className="px-1">Sign Up</Link>
 			</Card.Footer>
 		</Card>
 	)

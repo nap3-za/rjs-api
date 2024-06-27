@@ -27,15 +27,6 @@ function SignUpForm(props) {
 
 		password: null,
 		password2: null,
-// 		name: "Nape",
-// 		surname: "Ntsoane",
-// 		gender: "MLE",
-// 
-// 		username: "NapeNtsoane",
-// 		email: "nape@email.com",
-// 
-// 		password: "nape.1352",
-// 		password2: "nape.1352",
 
 	});
 	const form = useRef(null);

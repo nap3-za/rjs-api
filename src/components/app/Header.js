@@ -10,8 +10,6 @@ import NavDropdown from 'react-bootstrap/NavDropdown';
 import Offcanvas from 'react-bootstrap/Offcanvas';
 import InputGroup from 'react-bootstrap/InputGroup';
 
-// import LogoutIcon from "@material-ui/icons/Logout";
-
 import {
 	URL_SIGN_IN,
 	URL_SIGN_OUT,

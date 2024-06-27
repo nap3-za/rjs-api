@@ -13,9 +13,10 @@ import InstagramIcon from "@material-ui/icons/Instagram";
 import TwitterIcon from "@material-ui/icons/Twitter";
 import GitHubIcon from "@material-ui/icons/GitHub";
 
-import {
-	URL_SIGN_OUT,
-} from "../../AppUrls";
+// import {
+// 	URL_SIGN_OUT,
+// } from "../../AppUrls";
+
 import { BRAND_NAME_LONG } from "../../Constants";
 
 function Footer(props) {
